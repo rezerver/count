@@ -1,0 +1,30 @@
+#include "iostream"
+#include <fstream>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+	char a[10];
+	int count = 0;
+	ifstream fin("D:\\input.txt");
+	if (!fin)
+	{
+		cout << "can't open file \n";
+	}
+	else
+	{
+		cout << "open file\n";
+		while (!fin.eof())
+		{
+			char ch;
+			fin >> ch;
+			count++;
+		};
+		cout << count-1 << endl;;
+	}
+	fin.close();
+	ofstream fout("D:\\output.txt");
+	fout << count-1; 
+	fout.close();
+	system("PAUSE");
+	return 0;
+}
